@@ -1,19 +1,37 @@
 [project]
-name = "qq-music-api"
+name = "qq-music-mcp"
 version = "0.1.0"
-description = "QQ Music API implementation in Python"
+description = "QQ Music MCP Server - QQ Music API for LLMs"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "wangkezun", email = "pypi@wkz.io" }
+]
+keywords = ["mcp", "qq-music", "llm", "claude", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
 dependencies = [
     "httpx>=0.28.0",
-    "fastapi>=0.115.0",
-    "uvicorn>=0.34.0",
+    "mcp[cli]>=1.2.0",
     "pydantic>=2.10.0",
     "python-dotenv>=1.0.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/wangkezun/qq-music-mcp"
+Repository = "https://github.com/wangkezun/qq-music-mcp"
+
 [project.scripts]
-qq-music-api = "qq_music_api.main:main"
+qq-music-mcp = "qq_music_api.main:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/qq_music_api"]
